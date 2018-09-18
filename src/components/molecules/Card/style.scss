@@ -1,3 +1,5 @@
+@import '../../../styling/colours.scss';
+
 .card {
     display: flex;
     flex-direction: row;
@@ -5,7 +7,7 @@
         flex: 1 1 auto;
     }
     width: 100%;
-    border-bottom: thin solid #BBB;
+    border-bottom: thin solid $grey;
     padding: 10px;
 }
 
@@ -15,3 +17,7 @@
 }
 
 
+.subtitle {
+    font-size: 0.75rem;
+    color: $text-secondary-color;
+}

@@ -5,12 +5,24 @@ import PropTypes from 'prop-types';
 import Swimlane from '../../molecules/Swimlane';
 
 class Board extends Component {
+
     render() {
-        console.log('Print props: ', this.props);
+        const { swimlanes, cards } = this.props;
+
+        const swimlanesWithCards = swimlanes.reduce((acc, laneTitle) => {
+            acc[laneTitle] = cards.filter(c => c.status === laneTitle);
+            return acc;
+        }, {});
+
         return (
             <div className={style.board}>
                 {
-                    this.props.swimlanes.map(x => <Swimlane key={x} title={x} cards={[]}/>)
+                    Object.keys(swimlanesWithCards).map(x => <Swimlane 
+                        key={x} 
+                        title={x} 
+                        cards={swimlanesWithCards[x]} 
+                        onCardSwimlaneChange={this.props.onCardSwimlaneChange}
+                        />)
                 }
             </div>
         );
@@ -19,7 +31,8 @@ class Board extends Component {
 
 Board.propTypes = {
     swimlanes: PropTypes.arrayOf(PropTypes.string).isRequired,
-    cards: PropTypes.arrayOf(PropTypes.object).isRequired
+    cards: PropTypes.arrayOf(PropTypes.object).isRequired,
+    onCardSwimlaneChange: PropTypes.func.isRequired
 }
 
 export default Board;

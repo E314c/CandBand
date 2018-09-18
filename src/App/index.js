@@ -11,7 +11,29 @@ class App extends Component {
     this.state = {
       board: fakeApiCall()
     };
+
+    this.onCardSwimlaneChange = this.onCardSwimlaneChange.bind(this);
   }
+
+  onCardSwimlaneChange(cardId, newSwimlane) {
+    //Check swimlane is valid
+    if(!this.state.board.swimlanes.includes(newSwimlane)){
+      console.error(`Invalid swimlane: ${newSwimlane}`);
+      return;
+    }
+    // Find card index
+    const cardIndex = this.state.board.cards.findIndex(c => c.id === cardId);
+
+    if(cardIndex === -1) {
+      console.error(`Invalid CardId: ${cardId}`);
+      return;
+    } else {
+      const newState = JSON.parse(JSON.stringify(this.state));
+      newState.board.cards[cardIndex].status = newSwimlane;
+      this.setState(newState);
+    }
+  }
+
   render() {
     return (
       <div className={style.App}>
@@ -19,6 +41,7 @@ class App extends Component {
         <Board 
           swimlanes={this.state.board.swimlanes}
           cards={this.state.board.cards}
+          onCardSwimlaneChange={this.onCardSwimlaneChange}
         />
       </div>
     );
