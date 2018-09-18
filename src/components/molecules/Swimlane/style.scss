@@ -1,0 +1,18 @@
+@import '../../../styling/colours.scss';
+
+.lane {
+    display: flex;
+    flex-direction: column;
+    border-right: solid $grey thin;
+    border-left: solid $grey thin;
+
+    padding-right: 10px;
+    padding-left: 10px;
+
+    //flex within parent board:
+    flex: 1 0 auto;
+
+    &>* {
+        flex: 0 0 auto;
+    }
+}
