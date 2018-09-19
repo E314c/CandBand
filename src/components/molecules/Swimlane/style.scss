@@ -1,18 +1,39 @@
 @import '../../../styling/colours.scss';
 
+$lane-border-radius: 8px;
+
 .lane {
     display: flex;
     flex-direction: column;
-    border-right: solid $grey thin;
-    border-left: solid $grey thin;
-
-    padding-right: 10px;
-    padding-left: 10px;
+    
+    margin: 0 10px;
+    background-color: $offWhite;
+    border-radius: $lane-border-radius;
+    box-shadow: 1px 3px 4px -1px rgba(0,0,0,0.5);
 
     //flex within parent board:
-    flex: 1 0 auto;
+    flex: 1 0 0px;
 
     &>* {
         flex: 0 0 auto;
     }
+
+    &:hover{
+        background-color: white;
+        &>.laneTitleBox {
+            background-color: white;
+        }
+    }
+}
+
+.laneTitleBox {
+    border-radius: $lane-border-radius;
+    background-color: $offWhite;
+    padding: 10px;
+    box-shadow: 1px 3px 4px -1px rgba(0,0,0,0.5);
+}
+
+.laneCount {
+    margin-left: 5px;
+    color: $text-secondary-color;
 }

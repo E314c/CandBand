@@ -1,0 +1,13 @@
+
+$gold: gold;
+
+.ratingDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    color: $gold;
+
+    &>svg {
+        fill: $gold;
+    }
+}

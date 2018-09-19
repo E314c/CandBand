@@ -30,7 +30,12 @@ class Swimlane extends Component {
                 onDragOver={this.onDragOver}
                 onDrop={this.onDrop}
             >
-                <div>{this.props.title}</div>
+                <div className={style.laneTitleBox}>
+                    {this.props.title}
+                    <span className={style.laneCount}>
+                        ({this.props.cards.length})
+                    </span>
+                </div>
                 {this.props.cards.map(card => <Card key={ card.id } {...card} />)}
             </div>
         );

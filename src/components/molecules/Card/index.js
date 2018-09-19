@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import style from './style.scss';
-import ProfilePicture from '../../atoms/ProfilePicture';
 import PropTypes from 'prop-types';
+
+import ProfilePicture from '../../atoms/ProfilePicture';
+import RatingWidget from '../../atoms/RatingWidget';
 
 
 class Card extends Component {
@@ -27,12 +29,12 @@ class Card extends Component {
                     <ProfilePicture />
                 </div>
                 <div>
-                    <div>
+                    <div className= {style.topbar}>
                         <div>
                             { this.props.name }
                         </div>  
                         <div>
-                            { this.props.rating }
+                            <RatingWidget rating={ this.props.rating }/>
                         </div>  
                     </div>
                     <div className={style.subtitle}>
