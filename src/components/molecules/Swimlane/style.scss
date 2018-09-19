@@ -1,6 +1,7 @@
 @import '../../../styling/colours.scss';
 
-$lane-border-radius: 8px;
+$lane-border-radius: 5px;
+
 
 .lane {
     display: flex;
@@ -9,7 +10,8 @@ $lane-border-radius: 8px;
     margin: 0 10px;
     background-color: $offWhite;
     border-radius: $lane-border-radius;
-    box-shadow: 1px 3px 4px -1px rgba(0,0,0,0.5);
+    box-shadow: 1px 3px 4px -2px rgba(0,0,0,0.5);
+    padding-bottom: 1rem; 
 
     //flex within parent board:
     flex: 1 0 0px;
@@ -19,21 +21,28 @@ $lane-border-radius: 8px;
     }
 
     &:hover{
-        background-color: white;
-        &>.laneTitleBox {
-            background-color: white;
-        }
+        background-color: #FFF;
     }
 }
 
 .laneTitleBox {
+    text-align: start;
     border-radius: $lane-border-radius;
-    background-color: $offWhite;
-    padding: 10px;
-    box-shadow: 1px 3px 4px -1px rgba(0,0,0,0.5);
+    background-color: inherit;
+    padding: 1rem;
+    box-shadow: 0px 2px 5px -3px rgba(0,0,0,0.5);
+    margin-bottom: 0.5rem; 
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .laneCount {
     margin-left: 5px;
     color: $text-secondary-color;
+}
+
+.icon {
+    fill: $dark-grey;
 }

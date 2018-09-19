@@ -1,5 +1,5 @@
 
-$gold: gold;
+$gold: #bc9f54;
 
 .ratingDiv {
     display: flex;
@@ -9,5 +9,9 @@ $gold: gold;
 
     &>svg {
         fill: $gold;
+    }
+
+    &>span {
+        margin-left: 3px;
     }
 }

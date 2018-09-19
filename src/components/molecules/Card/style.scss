@@ -7,6 +7,7 @@
     width: 100%;
     border-bottom: thin solid $grey;
     padding: 20px;
+    background-color: white;
 
     &>*{
         flex: 1 1 auto;
@@ -23,6 +24,7 @@
     font-size: 0.75rem;
     color: $text-secondary-color;
     text-align: start;
+    margin-top: 10px;
 }
 
 .topbar{

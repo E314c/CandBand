@@ -3,6 +3,7 @@ import style from './style.scss';
 import PropTypes from 'prop-types';
 
 import Card from '../Card';
+import MoreIcon from '../../atoms/Icons/more-hori';
 
 class Swimlane extends Component {
     constructor(props) {
@@ -31,10 +32,13 @@ class Swimlane extends Component {
                 onDrop={this.onDrop}
             >
                 <div className={style.laneTitleBox}>
-                    {this.props.title}
-                    <span className={style.laneCount}>
-                        ({this.props.cards.length})
-                    </span>
+                    <div>
+                        {this.props.title}
+                        <span className={style.laneCount}>
+                            ({this.props.cards.length})
+                        </span>
+                    </div>
+                    <MoreIcon style={style.icon}/>
                 </div>
                 {this.props.cards.map(card => <Card key={ card.id } {...card} />)}
             </div>

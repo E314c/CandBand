@@ -10,6 +10,7 @@ This is just a Proof of Concept and is in no way production ready:
   - mainly so it's easier to know if I left in console logs and such
 - [ ] Unit tests
 - [ ] In Browser automation tests
+- [ ] Mobile design (doesn't work well on narrow screens).
 - [ ] Accessibility tagging (ARIA roles, etc)
 - [ ] proper state managment (Redux)
 - [ ] Data module to handle API calls and state transfers between client <-> server
